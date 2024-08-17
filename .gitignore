@@ -68,5 +68,6 @@ windows/flutter/ephemeral/
 /ios/Podfile.lock
 
 # Analysis and lock files
+.env.development
 devtools_options.yaml
 pubspec.lock

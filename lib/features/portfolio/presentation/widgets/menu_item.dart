@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
   final String title;
+  final List<String> items;
 
   const MenuItem({
     super.key,
     required this.title,
+    required this.items,
   });
 
   @override
@@ -24,25 +26,13 @@ class MenuItem extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const Text(
-            'SOBRE MI',
-            style: TextStyle(color: Colors.white),
-          ),
-          const Text(
-            'PORTFOLIO',
-            style: TextStyle(color: Colors.white),
-          ),
-          const Text(
-            'EDUCACIÓN',
-            style: TextStyle(color: Colors.white),
-          ),
-          const Text(
-            'PROYECTOS',
-            style: TextStyle(color: Colors.white),
-          ),
-          const Text(
-            'CONTACTAME',
-            style: TextStyle(color: Colors.white),
+          ...items.map(
+            (item) => Text(
+              item,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
         ],
       ),
