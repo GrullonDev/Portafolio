@@ -1,0 +1,69 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+*.tmp
+*.temp
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+.prj/
+
+# Visual Studio Code related
+.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+.flutter_export_environment.sh
+.packages
+package_config.json
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Flutter specific platforms
+# Linux
+linux/flutter/ephemeral/
+/linux/build/
+
+# macOS
+macos/Flutter/ephemeral/
+/macos/build/
+
+# Windows
+windows/flutter/ephemeral/
+/windows/build/
+
+# Web
+/web/flutter/ephemeral/
+/web/build/
+
+# Analysis and lock files
+analysis_options.yaml
+devtools_options.yaml
+pubspec.lock
