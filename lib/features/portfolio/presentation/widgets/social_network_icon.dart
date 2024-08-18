@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba/utils/custom_icon.dart';
 
 class SocialNetworkIcons extends StatelessWidget {
   const SocialNetworkIcons({
@@ -10,11 +11,11 @@ class SocialNetworkIcons extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          icon: const Icon(Icons.link, color: Colors.pink),
+          icon: const CustomIcon(path: 'instagram', ext: 'png'),
           onPressed: () {},
         ),
         IconButton(
-          icon: const Icon(Icons.abc, color: Colors.pink),
+          icon: const CustomIcon(path: 'linkedin', ext: 'png'),
           onPressed: () {},
         ),
         IconButton(
@@ -22,7 +23,15 @@ class SocialNetworkIcons extends StatelessWidget {
           onPressed: () {},
         ),
         IconButton(
-          icon: const Icon(Icons.account_box, color: Colors.pink),
+          icon: const CustomIcon(path: 'whatsapp', ext: 'png'),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const CustomIcon(path: 'youtube', ext: 'png'),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const CustomIcon(path: 'x', ext: 'png'),
           onPressed: () {},
         ),
       ],
