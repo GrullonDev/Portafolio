@@ -15,14 +15,6 @@ class AboutMeWidget extends StatelessWidget {
     return RichText(
       text: TextSpan(
         children: [
-          const TextSpan(
-            text: 'About Me',
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
           TextSpan(
             text: content,
             style: const TextStyle(

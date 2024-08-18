@@ -21,14 +21,14 @@ class DataInfo extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(color: Colors.white).copyWith(
-              fontSize: 18,
+              fontSize: 28,
             ),
           ),
           const SizedBox(height: 20),
           Text(
             content,
             style: const TextStyle(color: Colors.white).copyWith(
-              fontSize: 14,
+              fontSize: 20,
             ),
           ),
         ],
