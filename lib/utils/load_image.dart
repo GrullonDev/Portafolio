@@ -19,7 +19,7 @@ class LoadImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      '$path.$ext',
+      'assets/$path.$ext',
       width: width,
       height: height,
       fit: fit,
