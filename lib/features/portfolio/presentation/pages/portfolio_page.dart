@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:prueba/features/portfolio/presentation/bloc/portafolio_bloc.dart';
 import 'package:prueba/features/portfolio/presentation/pages/portafolio_layout.dart';
 
 class PortfolioPage extends StatelessWidget {
@@ -6,9 +8,12 @@ class PortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF1B0D2B),
-      body: PortafolioLayout(),
+    return ChangeNotifierProvider(
+      create: (context) => PortfolioBloc(),
+      builder: (context, child) => const Scaffold(
+        backgroundColor: Color(0xFF1B0D2B),
+        body: PortafolioLayout(),
+      ),
     );
   }
 }

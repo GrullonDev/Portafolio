@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:prueba/features/portfolio/presentation/bloc/portafolio_bloc.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/about_me_widget.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/education_widget.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/skill_bar.dart';
@@ -14,6 +17,8 @@ class MainDataWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<PortfolioBloc>();
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -71,70 +76,25 @@ class MainDataWidget extends StatelessWidget {
                     ' me ha llevado a especializarme en varias áreas claves del desarrollo.'),
             const SizedBox(height: 20),
             const TitleWidget(title: 'EDUCACIÓN'),
-            const EducationWidget(
-              title: '\nUniversidad Mariano Galvez',
-              content: '2017 - actualidad',
-            ),
-            const EducationWidget(
-              title: '\nColegio IMB-PC',
-              content: '2012 - 2016',
+            ...bloc.listEducation.map(
+              (it) => EducationWidget(
+                title: it['title']!,
+                content: it['content']!,
+              ),
             ),
             const SizedBox(height: 20),
             const TitleWidget(title: 'HABILIDADES'),
-            const SkillBar(
-              skill: 'Flutter',
-              level: 0.95,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Dart',
-              level: 0.80,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'GraphQL',
-              level: 0.60,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Javascript',
-              level: 0.5,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Prisma',
-              level: 0.2,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Scrum',
-              level: 1,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'PostgreSQL',
-              level: 0.9,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'MySQL',
-              level: 0.6,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Oracle',
-              level: 0.6,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Git y Github',
-              level: 1,
-              color: Colors.yellow,
-            ),
-            const SkillBar(
-              skill: 'Apollo Server',
-              level: 0.4,
-              color: Colors.yellow,
+            ...bloc.listSkills.map(
+              (skill) {
+                final skillName = skill['skill'] as String;
+                final skillLevel = skill['level'] as double;
+
+                return SkillBar(
+                  skill: skillName,
+                  level: skillLevel,
+                  color: Colors.yellow,
+                );
+              },
             ),
             const SizedBox(height: 20),
           ],
