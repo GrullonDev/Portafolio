@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:prueba/features/portfolio/presentation/bloc/portafolio_bloc.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/about_me_widget.dart';
+import 'package:prueba/features/portfolio/presentation/widgets/contact_widget.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/education_widget.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/skill_bar.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/social_network_icon.dart';
@@ -97,6 +98,10 @@ class MainDataWidget extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
+            const TitleWidget(title: 'PROYECTOS'),
+            const SizedBox(height: 20),
+            const TitleWidget(title: 'CONTACTAME'),
+            const ContactWidget(),
           ],
         ),
       ),
