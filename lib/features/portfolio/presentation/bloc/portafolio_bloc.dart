@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioBloc extends ChangeNotifier {
   PortfolioBloc();
@@ -39,6 +40,26 @@ class PortfolioBloc extends ChangeNotifier {
       duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );
+  }
+
+  Future<void> downloadFile(BuildContext context) async {
+    const String fileUrl =
+        'https://drive.google.com/file/d/1OkDflrDMXIdiisdwg51QqcAYIw3GZEV5/view?usp=sharing';
+    final Uri url = Uri.parse(fileUrl);
+
+    try {
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url, mode: LaunchMode.externalApplication);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('No se puede abrir la URL')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error al abrir la URL: $e')),
+      );
+    }
   }
 
   final listMenuItem = [

@@ -61,7 +61,7 @@ class MainDataWidget extends StatelessWidget {
             DownloadFileButton(
               backgroundColor: Colors.blue,
               buttonText: 'Descargar CV',
-              onPressed: () {},
+              onPressed: () => bloc.downloadFile(context),
             ),
             const SizedBox(height: 20),
             const SocialNetworkIcons(),
