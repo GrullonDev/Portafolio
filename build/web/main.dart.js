@@ -72404,7 +72404,7 @@ L(a){var s=null,r=A.all(s,s,this.d,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s)
 return A.alk(A.dQ(this.c,s,s,s,s,s,s),this.e,r)}}
 A.vF.prototype={
 L(a){var s=this,r=null
-return new A.v4(A.axl(r,r,new A.tp(s.c+"."+s.d,r,r)),s.e,s.f,s.r,r)}}
+return new A.v4(A.axl(r,r,new A.tp("assets/"+s.c+"."+s.d,r,r)),s.e,s.f,s.r,r)}}
 A.G3.prototype={
 L(a){var s=null,r=A.a2z(a,!1,t.yc),q=A.b([B.bb,A.dQ(this.c,s,s,s,B.Na,s,s)],t.E),p=r.w
 B.b.N(q,new A.vA(p,A.X(p).i("vA<1>")).geQ().fN(0,new A.a0V(r),t.l7))
