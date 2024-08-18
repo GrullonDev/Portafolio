@@ -21,6 +21,7 @@ class MainDataWidget extends StatelessWidget {
     final bloc = context.read<PortfolioBloc>();
 
     return SingleChildScrollView(
+      controller: bloc.scrollController,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -65,7 +66,10 @@ class MainDataWidget extends StatelessWidget {
             const SizedBox(height: 20),
             const SocialNetworkIcons(),
             const SizedBox(height: 20),
-            const TitleWidget(title: 'SOBRE MÍ'),
+            TitleWidget(
+              title: 'SOBRE MÍ',
+              key: bloc.sobreMiKey,
+            ),
             const AboutMeWidget(
                 content: '\n\nHola, soy Jorge Luis Grullón Marroquín\n\n\n'
                     'Estudiante universitario responsable y puntual, 26 años con conocimientos indispensables para el manejo de hardware y software, '
@@ -76,7 +80,10 @@ class MainDataWidget extends StatelessWidget {
                     ' Soy un desarrollador de software con un enfoque versátil en la creación de aplicaciones móviles y web. Mi pasión por la tecnología'
                     ' me ha llevado a especializarme en varias áreas claves del desarrollo.'),
             const SizedBox(height: 20),
-            const TitleWidget(title: 'EDUCACIÓN'),
+            TitleWidget(
+              title: 'EDUCACIÓN',
+              key: bloc.educacionKey,
+            ),
             ...bloc.listEducation.map(
               (it) => EducationWidget(
                 title: it['title']!,
@@ -84,7 +91,10 @@ class MainDataWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const TitleWidget(title: 'HABILIDADES'),
+            TitleWidget(
+              title: 'HABILIDADES',
+              key: bloc.skillsKey,
+            ),
             ...bloc.listSkills.map(
               (skill) {
                 final skillName = skill['skill'] as String;
@@ -98,9 +108,15 @@ class MainDataWidget extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-            const TitleWidget(title: 'PROYECTOS'),
+            TitleWidget(
+              title: 'PROYECTOS',
+              key: bloc.proyectosKey,
+            ),
             const SizedBox(height: 20),
-            const TitleWidget(title: 'CONTACTAME'),
+            TitleWidget(
+              title: 'CONTACTAME',
+              key: bloc.contactameKey,
+            ),
             const ContactWidget(),
           ],
         ),

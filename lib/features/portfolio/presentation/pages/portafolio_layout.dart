@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:prueba/features/portfolio/presentation/bloc/portafolio_bloc.dart';
 import 'package:prueba/features/portfolio/presentation/widgets/main_data.dart';
 import 'package:prueba/utils/menu_item.dart';
 import 'package:prueba/utils/load_image.dart';
@@ -8,31 +10,28 @@ class PortafolioLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<PortfolioBloc>();
+
     return Row(
       children: [
         Expanded(
           flex: 2,
           child: Container(
             color: const Color(0xFF3B2366),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                LoadImage(
+                const LoadImage(
                   path: 'avatar',
                   ext: 'jpeg',
                   fit: BoxFit.contain,
                 ),
                 // Image.asset('avatar.jpeg'),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 MenuItem(
                   title: 'Jorge Grullón',
-                  items: [
-                    'SOBRE MI',
-                    'EDUCACIÓN',
-                    'SKILLS',
-                    'PROYECTOS',
-                    'CONTACTAME',
-                  ],
+                  items: bloc.listMenuItem,
+                  scrollController: bloc.scrollController,
                 ),
               ],
             ),
