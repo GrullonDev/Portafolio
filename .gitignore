@@ -31,7 +31,6 @@ migrate_working_dir/
 .metadata
 .pub-cache/
 .pub/
-/build/
 .flutter_export_environment.sh
 .packages
 package_config.json
