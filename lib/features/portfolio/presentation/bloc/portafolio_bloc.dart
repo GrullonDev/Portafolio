@@ -111,7 +111,7 @@ class PortfolioBloc extends ChangeNotifier {
     },
     {
       'skill': 'Dart',
-      'level': 0.8,
+      'level': 0.95,
     },
     {
       'skill': 'GraphQL',
