@@ -23,7 +23,7 @@ class SocialNetworkIcons extends StatelessWidget {
           onPressed: () => bloc.laucherUrl(bloc.socialLinks['linkedin']!),
         ),
         IconButton(
-          icon: const Icon(Icons.facebook_outlined, color: Colors.pink),
+          icon: const CustomIcon(path: 'facebook', ext: 'png'),
           onPressed: () => bloc.laucherUrl(bloc.socialLinks['facebook']!),
         ),
         IconButton(
