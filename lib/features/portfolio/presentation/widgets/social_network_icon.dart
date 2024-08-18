@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:prueba/features/portfolio/presentation/bloc/portafolio_bloc.dart';
 import 'package:prueba/utils/custom_icon.dart';
 
 class SocialNetworkIcons extends StatelessWidget {
@@ -8,31 +10,33 @@ class SocialNetworkIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<PortfolioBloc>();
+
     return Row(
       children: [
         IconButton(
           icon: const CustomIcon(path: 'instagram', ext: 'png'),
-          onPressed: () {},
+          onPressed: () => bloc.laucherUrl(bloc.socialLinks['instagram']!),
         ),
         IconButton(
           icon: const CustomIcon(path: 'linkedin', ext: 'png'),
-          onPressed: () {},
+          onPressed: () => bloc.laucherUrl(bloc.socialLinks['linkedin']!),
         ),
         IconButton(
           icon: const Icon(Icons.facebook_outlined, color: Colors.pink),
-          onPressed: () {},
+          onPressed: () => bloc.laucherUrl(bloc.socialLinks['facebook']!),
         ),
         IconButton(
           icon: const CustomIcon(path: 'whatsapp', ext: 'png'),
-          onPressed: () {},
+          onPressed: () => bloc.laucherUrl(bloc.socialLinks['whatsapp']!),
         ),
         IconButton(
           icon: const CustomIcon(path: 'youtube', ext: 'png'),
-          onPressed: () {},
+          onPressed: () => bloc.laucherUrl(bloc.socialLinks['youtube']!),
         ),
         IconButton(
           icon: const CustomIcon(path: 'x', ext: 'png'),
-          onPressed: () {},
+          onPressed: () => bloc.laucherUrl(bloc.socialLinks['x']!),
         ),
       ],
     );

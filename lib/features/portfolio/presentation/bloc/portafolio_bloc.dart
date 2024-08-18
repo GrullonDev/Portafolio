@@ -66,6 +66,25 @@ class PortfolioBloc extends ChangeNotifier {
     }
   }
 
+  Future<void> laucherUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      throw 'Could not launch $url';
+    }
+  }
+
+  final Map<String, String> socialLinks = const {
+    'instagram':
+        'https://www.instagram.com/jorge_grullon98/?utm_source=qr&igsh=YWU3eG1qcnJ5Y3Bs',
+    'linkedin':
+        'https://www.linkedin.com/in/jorge-grull%C3%B3n-289719282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'whatsapp': 'https://wa.me/tu_numero',
+    'youtube': 'https://www.youtube.com/@ingenieriachapina6283',
+    'x': 'https://x.com/i/flow/login?redirect_after_login=%2FJorgeLuisGM8',
+    'facebook':
+        'https://www.facebook.com/IngenieroChapin2020?mibextid=qi2Omg&rdid=Km56BXybkMWe7K2A&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FjAVvopraGfLTRwfL%2F%3Fmibextid%3Dqi2Omg',
+  };
+
   final listMenuItem = [
     'SOBRE MI',
     'EDUCACIÓN',
