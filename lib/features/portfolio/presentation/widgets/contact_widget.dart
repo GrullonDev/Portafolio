@@ -23,7 +23,6 @@ class ContactWidget extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
           children: [
             const UserInput(
               label: 'Tu Nombre',
@@ -67,8 +66,6 @@ class ContactWidget extends StatelessWidget {
                       'Enviar',
                       style: TextStyle(fontSize: 25),
                     ),
-                    SizedBox(width: 10),
-                    Icon(Icons.send_outlined),
                   ],
                 ),
               ),
