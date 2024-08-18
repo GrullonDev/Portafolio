@@ -78,7 +78,7 @@ class PortfolioBloc extends ChangeNotifier {
         'https://www.instagram.com/jorge_grullon98/?utm_source=qr&igsh=YWU3eG1qcnJ5Y3Bs',
     'linkedin':
         'https://www.linkedin.com/in/jorge-grull%C3%B3n-289719282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    'whatsapp': 'https://wa.me/tu_numero',
+    'whatsapp': 'https://wa.me/+50242909548',
     'youtube': 'https://www.youtube.com/@ingenieriachapina6283',
     'x': 'https://x.com/i/flow/login?redirect_after_login=%2FJorgeLuisGM8',
     'facebook':
